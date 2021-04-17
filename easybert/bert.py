@@ -74,7 +74,7 @@ class Bert(object):
         self._session = None
 
         # Initialize the BERT model
-        with tf.Session(graph=self._graph) as session:
+        with tf.compat.v1.Session(graph=self._graph) as session:
             # Download module from tf-hub
             bert_module = hub.Module(tf_hub_url)
 
@@ -86,9 +86,9 @@ class Bert(object):
             self._tokenizer = FullTokenizer(vocab_file=self._vocab_file, do_lower_case=self._do_lower_case)
 
             # Create symbolic input tensors as inputs to the model
-            self._input_ids = tf.placeholder(name="input_ids", shape=(None, max_sequence_length), dtype=tf.int32)
-            self._input_mask = tf.placeholder(name="input_mask", shape=(None, max_sequence_length), dtype=tf.int32)
-            self._segment_ids = tf.placeholder(name="segment_ids", shape=(None, max_sequence_length), dtype=tf.int32)
+            self._input_ids = tf.compat.v1.placeholder(name="input_ids", shape=(None, max_sequence_length), dtype=tf.int32)
+            self._input_mask = tf.compat.v1.placeholder(name="input_mask", shape=(None, max_sequence_length), dtype=tf.int32)
+            self._segment_ids = tf.compat.v1.placeholder(name="segment_ids", shape=(None, max_sequence_length), dtype=tf.int32)
 
             # Get the symbolic output tensors
             self._outputs = bert_module({
@@ -100,7 +100,7 @@ class Bert(object):
     def __enter__(self) -> None:
         # Start a session
         if self._session is None:
-            self._session = tf.Session(graph=self._graph)
+            self._session = tf.compat.v1.Session(graph=self._graph)
             self._session.__enter__()
             self._session.run(tf.global_variables_initializer())
 
@@ -137,7 +137,7 @@ class Bert(object):
                 self._segment_ids: [sequence.segment_ids for sequence in input_features]
             })
         else:
-            with tf.Session(graph=self._graph) as session:
+            with tf.compat.v1.Session(graph=self._graph) as session:
                 session.run(tf.global_variables_initializer())
 
                 output = session.run(self._outputs["sequence_output" if per_token else "pooled_output"], feed_dict={
@@ -173,7 +173,7 @@ class Bert(object):
                 "segment_ids": self._segment_ids
             }, outputs=self._outputs)
         else:
-            with tf.Session(graph=self._graph) as session:
+            with tf.compat.v1.Session(graph=self._graph) as session:
                 session.run(tf.global_variables_initializer())
 
                 tf.saved_model.simple_save(session, str(path), inputs={
@@ -213,7 +213,7 @@ class Bert(object):
         bert._session = None
 
         # Load graph from disk
-        with tf.Session(graph=bert._graph) as session:
+        with tf.compat.v1.Session(graph=bert._graph) as session:
             bundle = tf.saved_model.load(session, ["serve"], str(path))
 
         # Get tokenizer parameters

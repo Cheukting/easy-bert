@@ -41,7 +41,7 @@ tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>
 
 [[package]]
 name = "bert-tensorflow"
-version = "1.0.4"
+version = "1.0.1"
 description = "BERT"
 category = "main"
 optional = false
@@ -381,32 +381,6 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "tensorflow-gpu"
-version = "1.15.5"
-description = "TensorFlow is an open source machine learning framework for everyone."
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-absl-py = ">=0.7.0"
-astor = ">=0.6.0"
-gast = "0.2.2"
-google-pasta = ">=0.1.6"
-grpcio = ">=1.8.6"
-h5py = "<=2.10.0"
-keras-applications = ">=1.0.8"
-keras-preprocessing = ">=1.0.5"
-numpy = ">=1.16.0,<1.19.0"
-opt-einsum = ">=2.3.2"
-protobuf = ">=3.6.1"
-six = ">=1.10.0"
-tensorboard = ">=1.15.0,<1.16.0"
-tensorflow-estimator = "1.15.1"
-termcolor = ">=1.1.0"
-wrapt = ">=1.11.1"
-
-[[package]]
 name = "tensorflow-hub"
 version = "0.4.0"
 description = "TensorFlow Hub is a library to foster the publication, discovery, and consumption of reusable parts of machine learning models."
@@ -475,13 +449,10 @@ python-versions = ">=3.6"
 docs = ["sphinx", "jaraco.packaging (>=8.2)", "rst.linker (>=1.9)"]
 testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-cov", "pytest-enabler", "jaraco.itertools", "func-timeout", "pytest-black (>=0.3.7)", "pytest-mypy"]
 
-[extras]
-gpu = ["tensorflow-gpu"]
-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "e7ca8deada014a49aeb6af188be31cb5be088f2f71253cf8686df2baf21c1158"
+content-hash = "d92151c34d6b09bc634bb1f1b07faa8abce5d488402dbac871102ba79dc72968"
 
 [metadata.files]
 absl-py = [
@@ -501,8 +472,8 @@ attrs = [
     {file = "attrs-20.3.0.tar.gz", hash = "sha256:832aa3cde19744e49938b91fea06d69ecb9e649c93ba974535d08ad92164f700"},
 ]
 bert-tensorflow = [
-    {file = "bert-tensorflow-1.0.4.tar.gz", hash = "sha256:ae3e07c0d89439f42d0ce3f5900be6aa98025ceaf264c3a0e738e6d6f9cfe7e9"},
-    {file = "bert_tensorflow-1.0.4-py2.py3-none-any.whl", hash = "sha256:f880680a03fbf637c217443b7d3d8969d0b3aef4822b4ea13c2a124498dd21a0"},
+    {file = "bert-tensorflow-1.0.1.tar.gz", hash = "sha256:979ab38715be88bc95483654994c8bbb85acdbfdc60ca1a0ff90cfe8c8f95ea8"},
+    {file = "bert_tensorflow-1.0.1-py2.py3-none-any.whl", hash = "sha256:3f35ada6769f91e88c69b11b24fde7ff2d61a9d8b3c2a29229c1fdaee50354a0"},
 ]
 click = [
     {file = "click-7.1.2-py2.py3-none-any.whl", hash = "sha256:dacca89f4bfadd5de3d7489b7c8a566eee0d3676333fbb50030263894c38c0dc"},
@@ -726,12 +697,6 @@ tensorflow = [
 ]
 tensorflow-estimator = [
     {file = "tensorflow_estimator-1.15.1-py2.py3-none-any.whl", hash = "sha256:8853bfb7c3c96fbdc80b3d66c37a10af6ccbcd235dc87474764270c02a0f86b9"},
-]
-tensorflow-gpu = [
-    {file = "tensorflow_gpu-1.15.5-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:d8243cbacefe8cd77564532e48dbfa8ed98bda6f5cc05d371040ac48f0f80a7b"},
-    {file = "tensorflow_gpu-1.15.5-cp36-cp36m-win_amd64.whl", hash = "sha256:d909f84d863d18e7f6247ebddc44d61ad56de4c7466301565cf135f5511f0d76"},
-    {file = "tensorflow_gpu-1.15.5-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:d0f9afbdc4d3d66870e626462733ac0ea92757b0c2c92279305d13b12a2f84e8"},
-    {file = "tensorflow_gpu-1.15.5-cp37-cp37m-win_amd64.whl", hash = "sha256:b0ac2858a5a0e799bdae1e5b86df46d6b33df79bd6cd8e36791fb225c672a39f"},
 ]
 tensorflow-hub = [
     {file = "tensorflow_hub-0.4.0-py2.py3-none-any.whl", hash = "sha256:299967392aeda7032d6bd29b178f65a9bd8e43cfc550ea427fd37507711d5ec2"},
