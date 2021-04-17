@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "easy-bert"
+version = "0.1.0"
+description = "Frok of easy bert at https://github.com/robrua/easy-bert"
+authors = ["Cheukting <cheukting.ho@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+numpy = "*"
+tensorflow = "^1.15.2"
+tensorflow-hub = "^0.4.0"
+bert-tensorflow = "^1.0.1"
+click = "*"
+
+# tensorflow-gpu = { version = "^1.15.2", optional = true }
+#
+# [tool.poetry.extras]
+# gpu = ["tensorflow-gpu"]
+
+[tool.poetry.dev-dependencies]
+flake8 = "*"
+numpy = "*"
+tensorflow = "^1.15.2"
+tensorflow-hub = "^0.4.0"
+bert-tensorflow = "^1.0.1"
+click = "*"
+pytest = "*"
+# tensorflow-gpu = "^1.15.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
