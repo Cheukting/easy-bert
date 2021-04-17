@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "easybert"
 version = "0.1.0"
-description = "Frok of easy bert at https://github.com/robrua/easy-bert"
+description = "Fork of easy bert at https://github.com/robrua/easy-bert"
 authors = ["Cheukting <cheukting.ho@gmail.com>"]
 license = "MIT"
 
